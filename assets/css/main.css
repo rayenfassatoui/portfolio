@@ -194,7 +194,7 @@ a, button {
   z-index: 1000;
   position: fixed;
   transition: all 0.3s ease;
-  display: none;
+  display: block;
   height: 40px;
   left: 0;
   width: 40px;
