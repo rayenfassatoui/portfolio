@@ -328,7 +328,11 @@
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                        <button id="theme-switcher" class="btn btn-primary"><i id="theme-icon" class="fas fa-sun"></i></button>
+                        <button id="theme-switcher" class="btn btn-primary">
+                            
+                            <a id="theme-switcher1" href="javascript:void(0)" class="light-scheme active"> <i id="theme-icon" class="lni-sun"></i> Light</a>
+                            <a id="theme-switcher1" href="javascript:void(0)" class="dark-scheme"><i  id="theme-icon" class="lni-night"></i> Dark</a>
+                        </button>
                     </li>
                     </ul>
                     <ul class="list-inline socails mt-4  d-lg-none">
@@ -1210,16 +1214,17 @@
      <script>
         document.getElementById("theme-switcher").addEventListener("click", function() {
             var body = document.body;
+var theme= document.getElementById("theme-switcher1");
             var themeIcon = document.getElementById("theme-icon");
             
-            if (body.classList.contains("light-scheme active")) {
+            if (theme.classList.contains("light-scheme active")) {
                 body.classList.remove("light-scheme active");
-                themeIcon.classList.remove("fa-moon");
-                themeIcon.classList.add("fa-sun");
+                themeIcon.classList.remove("lni-sun");
+                themeIcon.classList.add("lni-night");
             } else {
-                body.classList.add("dark-theme");
-                themeIcon.classList.remove("fa-sun");
-                themeIcon.classList.add("fa-moon");
+                theme.classList.add("dark-theme");
+                themeIcon.classList.remove("lni-night");
+                themeIcon.classList.add("lni-sun");
             }
         });
         </script>
