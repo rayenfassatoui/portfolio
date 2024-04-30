@@ -7,6 +7,12 @@ body {
   background-color: #f1f3f6;
 }
 
+.img-rayen {
+  width: 250px;
+  height: 250px;
+
+}
+
 .full-screen {
   height: 100vh;
 }
@@ -3149,5 +3155,8 @@ canvas.particles-js-canvas-el {
   .color-scheme-title, .color-scheme {
     display: none !important;
   }
+
+
+
 
 }
