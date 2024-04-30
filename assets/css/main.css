@@ -12,6 +12,13 @@ body {
   height: 250px;
 
 }
+.rayen2{
+  height: 250px;
+  width: 250px !important;
+  
+
+  
+}
 
 .full-screen {
   height: 100vh;
@@ -120,6 +127,11 @@ a, button {
   border-radius: 1.25rem;
   box-shadow: 3px 3px 8px rgba(55, 84, 170, 0.1), -3px -3px 8px white;
   padding: 5px;
+  padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 }
 
 .image-border img {
