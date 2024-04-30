@@ -363,7 +363,7 @@
                         <h3 class="dark-color mb-0 mt-3">I'M Fassatoui Rayen</h3>
                         <h1 class="dark-color text-capitalize mb-3">I'm a developer</h1>
                         <div class="button-border mb-lg-0">
-                            <a href="javascript:void(0);" id="downloadLink" class="pill-button">Download Cv</a>
+                            <a href="javascript:void(0);" onclick="window.location.href='./assets/rayenfassatouicv.pdf'" class="pill-button">Download Cv</a>
                         </div>
                     </div>
                 </div>
@@ -389,7 +389,7 @@
                                
                     </div>
                     <div class="button-border mt-3 mb-lg-0 mr-4">
-                        <a href="javascript:void(0);"  id="downloadLink" class="pill-button">Download Cv</a>
+                        <a href="javascript:void(0);" onclick="window.location.href='./assets/rayenfassatouicv.pdf'" class="pill-button">Download Cv</a>
                     </div>
                     <div class="button-border mt-3 mb-lg-0">
                         <a href="#contact" class="pill-button to-contact">Hire Me</a>
@@ -1269,17 +1269,7 @@
 
 
 
-     <script>
-        document.getElementById("downloadLink").addEventListener("click", function() {
-            // Replace 'path/to/your/cv.pdf' with the actual path to your CV file
-            var downloadLink = document.createElement("a");
-            downloadLink.href = "./assets/rayenfassatouicv.pdf";
-            downloadLink.download = "your_cv.pdf";
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-        });
-        </script>
+     
 
     </body>
 </html>
