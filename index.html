@@ -360,10 +360,10 @@
                         <div class="image-border d-inline-block rounded-circle">
                             <img src="./assets/img/img.png" alt="" class="img-rayen">
                         </div>
-                        <h3 class="dark-color mb-0 mt-3">I'M Jessy Doe</h3>
-                        <h1 class="dark-color text-capitalize mb-3"><span class="base-color">A  </span> <span class="element" data-elements="UI Designer.,Web Designer.,Web Developer."></span></h1>
+                        <h3 class="dark-color mb-0 mt-3">I'M Fassatoui Rayen</h3>
+                        <h1 class="dark-color text-capitalize mb-3">I'm a developer</h1>
                         <div class="button-border mb-lg-0">
-                            <a href="javascript:void(0);" class="pill-button">Download Cv</a>
+                            <a href="javascript:void(0);" id="downloadLink" class="pill-button">Download Cv</a>
                         </div>
                     </div>
                 </div>
@@ -1184,6 +1184,20 @@
     <script src="assets/js/particles-01.min.js"></script>
      <!--  particles app Js  -->
      <script src="assets/js/particles-01.app.js"></script>
+
+
+
+     <script>
+        document.getElementById("downloadLink").addEventListener("click", function() {
+            // Replace 'path/to/your/cv.pdf' with the actual path to your CV file
+            var downloadLink = document.createElement("a");
+            downloadLink.href = "./assets/rayenfassatouicv.pdf";
+            downloadLink.download = "your_cv.pdf";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        });
+        </script>
 
     </body>
 </html>
