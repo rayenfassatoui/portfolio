@@ -1213,16 +1213,18 @@
 
      <script>
         document.getElementById("theme-switcher").addEventListener("click", function() {
-            var body = document.body;
+            var body = document.getElementById("theme-switcher");
 var theme= document.getElementById("theme-switcher1");
             var themeIcon = document.getElementById("theme-icon");
             
             if (theme.classList.contains("light-scheme active")) {
-                body.classList.remove("light-scheme active");
+                theme.classList.remove("light-scheme active");
+                theme.classList.add("dark-theme");
                 themeIcon.classList.remove("lni-sun");
                 themeIcon.classList.add("lni-night");
             } else {
-                theme.classList.add("dark-theme");
+                theme.classList.remove("dark-theme");
+                theme.classList.add("light-scheme active");
                 themeIcon.classList.remove("lni-night");
                 themeIcon.classList.add("lni-sun");
             }
