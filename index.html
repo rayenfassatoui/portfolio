@@ -330,8 +330,7 @@
                         <li class="nav-item">
                         <button id="theme-switcher" class="btn btn-primary">
                             
-                            <a id="theme-switcher1" href="javascript:void(0)" class="light-scheme active"> <i id="theme-icon" class="lni-sun"></i> Light</a>
-                            <a id="theme-switcher1" href="javascript:void(0)" class="dark-scheme"><i  id="theme-icon" class="lni-night"></i> Dark</a>
+                            <a id="theme-switcher1" href="javascript:void(0)" class="light-scheme active"> <i id="theme-icon" class="lni-sun"></i></a>
                         </button>
                     </li>
                     </ul>
@@ -1220,13 +1219,13 @@ var theme= document.getElementById("theme-switcher1");
             if (theme.classList.contains("light-scheme active")) {
                 theme.classList.remove("light-scheme active");
                 theme.classList.add("dark-theme");
-                themeIcon.classList.remove("lni-sun");
-                themeIcon.classList.add("lni-night");
+                themeIcon.classList.remove("lni-night");
+                themeIcon.classList.add("lni-sun");
             } else {
                 theme.classList.remove("dark-theme");
                 theme.classList.add("light-scheme active");
-                themeIcon.classList.remove("lni-night");
-                themeIcon.classList.add("lni-sun");
+                themeIcon.classList.remove("lni-sun");
+                themeIcon.classList.add("lni-night");
             }
         });
         </script>
