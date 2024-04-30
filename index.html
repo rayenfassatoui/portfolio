@@ -326,6 +326,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                        <button id="theme-switcher" class="btn btn-primary"><i id="theme-icon" class="fas fa-sun"></i></button>
+                    </li>
                     </ul>
                     <ul class="list-inline socails mt-4  d-lg-none">
                         <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -1163,15 +1166,6 @@
     <!-- Start Options -->
     <div id="color-switcher" class="color-switcher" >
         <div class="text-center color-pallet hide">
-            <h6 class="theme-skin-title">Theme Skin</h6>
-            <ul class="theme-skin list-inline">
-                <li class="list-inline-item">
-                    <a href="javascript:void(0)" class="flat-skin active">Flat</a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="javascript:void(0)" class="neo-skin">Neo</a>
-                </li>
-            </ul>
             <h6 class="my-2 color-scheme-title">Light & Dark Version</h6>
             <ul class="color-scheme list-inline">
                 <li class="list-inline-item">
@@ -1212,7 +1206,22 @@
      <script src="assets/js/particles-01.app.js"></script>
 
 
-
+     <script>
+        document.getElementById("theme-switcher").addEventListener("click", function() {
+            var body = document.body;
+            var themeIcon = document.getElementById("theme-icon");
+            
+            if (body.classList.contains("dark-theme")) {
+                body.classList.remove("dark-theme");
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+            } else {
+                body.classList.add("dark-theme");
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+            }
+        });
+        </script>
      
 
     </body>
