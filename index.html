@@ -650,7 +650,7 @@
             </div>
             <div class="row copy-right">
                 <div class="col-12 text-center text-dark">
-                    <p>Copyright © 2024 <span class="base-color">Rayen Fassatoui</span></p>
+                    <p id="copyright"></p>
                 </div>
             </div>
         </div>
@@ -702,7 +702,16 @@
      <!--  particles app Js  -->
      <script src="assets/js/particles-01.app.js"></script>
  
-
+     <script>
+        // Get the current year dynamically
+        var currentYear = new Date().getFullYear();
+    
+        // Author's name
+        var authorName = "Rayen Fassatoui";
+    
+        // Update the copyright text
+        document.getElementById("copyright").innerHTML = "Copyright © " + currentYear + " <span class='base-color'>" + authorName + "</span>";
+      </script>
 
     
      
