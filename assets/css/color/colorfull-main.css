@@ -84,7 +84,7 @@
   box-shadow: 3px 3px 8px 0px rgba(45, 45, 45, 0.1) !important;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .flat-demo .box-border {
     background-color: rgba(52, 53, 57, 0.9) !important;
     box-shadow: 3px 3px 8px 0px rgba(45, 45, 45, 0.1) !important;
@@ -93,4 +93,4 @@
   .flat-demo .portfolio .portfolio-item-content {
     box-shadow: 3px 3px 8px 0px rgba(45, 45, 45, 0.1) !important;
   }
-}
+} */
