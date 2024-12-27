@@ -158,14 +158,16 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Certifications
+                  Certifications
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Professional Development
+                  Professional Development
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {" "}
-                I&apos;m committed to continuous learning and growth. I have earned a total of {DATA.hackathons.length} certifications, highlighting my dedication and achievements.
+                  {" "}
+                  I&apos;m committed to continuous learning and growth. I have
+                  earned a total of {DATA.hackathons.length} certifications,
+                  highlighting my dedication and achievements.
                 </p>
               </div>
             </div>
@@ -176,7 +178,7 @@ export default function Page() {
                 <BlurFade
                   key={project.title + project.dates}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >     
+                >
                   <HackathonCard
                     title={project.title}
                     description={project.description}
@@ -202,14 +204,13 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-             
-                Just shoot me a dm 
-                <Link className="text-blue-500" href="https://www.linkedin.com/in/rayenfassatoui/"> with a direct question on LinkedIn </Link>
-                
-                
-                
-                and I&apos;ll respond whenever I can. I will ignore all soliciting.
+                Just send me a DM on{" "}
+                <Link
+                  className="text-blue-500"
+                  href="https://www.linkedin.com/in/rayenfassatoui/"
+                >
+                  LinkedIn{" "}
+                </Link>
               </p>
             </div>
           </BlurFade>
