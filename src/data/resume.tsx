@@ -89,7 +89,7 @@ export const DATA = {
     },
     {
       company: "AJico Group",
-      href: "https://nvidia.com/",
+      href: "",
       badges: [],
       location: "Hybrid",
       title: "Web Developer",
@@ -101,7 +101,7 @@ export const DATA = {
     },
     {
       company: "CIN Group",
-      href: "https://splunk.com",
+      href: "",
       badges: [],
       location: "On-site",
       title: "Fullstack developer",
@@ -113,7 +113,7 @@ export const DATA = {
     },
     {
       company: "Smart Kokusai",
-      href: "https://smartkokusai.com/",
+      href: "",
       badges: [],
       location: "Remote",
       title: "Junior Developer",
@@ -206,8 +206,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/indigenes.png",
+      video: "",
     },
     {
       title: "AI_Powered_Data",
@@ -243,8 +243,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      image: "/dataviz.png",
+      video: "",
     },
     {
       title: "management",
