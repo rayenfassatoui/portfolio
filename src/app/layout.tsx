@@ -55,6 +55,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="description"
+          content="Explore Rayen Fassatoui's portfolio showcasing skills in React, Node.js, and modern database technologies. Discover projects like Entretien-AI and Indigenes."
+        />
+        <meta
+          property="og:title"
+          content="Rayen Fassatoui - Web Developer Portfolio"
+        />
+
+        <meta
+          property="og:description"
+          content="Explore Rayen Fassatoui's portfolio showcasing skills in React, Node.js, and modern database technologies. Discover projects like Entretien-AI and Indigenes."
+        />
+        <meta property="og:image" content="/metatag.png" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
