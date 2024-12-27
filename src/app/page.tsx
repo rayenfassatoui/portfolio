@@ -22,7 +22,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} `}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -165,7 +165,7 @@ export default function Page() {
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 {" "}
-                I'm committed to continuous learning and growth. I have earned a total of {DATA.hackathons.length} certifications, highlighting my dedication and achievements.
+                I&apos;m committed to continuous learning and growth. I have earned a total of {DATA.hackathons.length} certifications, highlighting my dedication and achievements.
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function Page() {
                 
                 
                 
-                and I'll respond whenever I can. I will ignore all soliciting.
+                and I&apos;ll respond whenever I can. I will ignore all soliciting.
               </p>
             </div>
           </BlurFade>
