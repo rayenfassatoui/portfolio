@@ -161,15 +161,11 @@ export default function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                Professional Development
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                {" "}
+                I'm committed to continuous learning and growth. I have earned a total of {DATA.hackathons.length} certifications, highlighting my dedication and achievements.
                 </p>
               </div>
             </div>
@@ -180,7 +176,7 @@ export default function Page() {
                 <BlurFade
                   key={project.title + project.dates}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
+                >     
                   <HackathonCard
                     title={project.title}
                     description={project.description}
@@ -208,8 +204,12 @@ export default function Page() {
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just shoot me a dm{" "}
              
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                Just shoot me a dm 
+                <Link className="text-blue-500" href="https://www.linkedin.com/in/rayenfassatoui/"> with a direct question on LinkedIn </Link>
+                
+                
+                
+                and I'll respond whenever I can. I will ignore all soliciting.
               </p>
             </div>
           </BlurFade>
