@@ -64,7 +64,8 @@ export default function RootLayout({
           property="og:title"
           content="Rayen Fassatoui - Web Developer Portfolio"
         />
-
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rayen.vercel.app" />
         <meta
           property="og:description"
           content="Explore Rayen Fassatoui's portfolio showcasing skills in React, Node.js, and modern database technologies. Discover projects like Entretien-AI and Indigenes."
