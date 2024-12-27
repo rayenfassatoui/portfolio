@@ -204,13 +204,14 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Just send me a DM on{" "}
+                Want to chat ? Just send me a DM on {" "}
                 <Link
                   className="text-blue-500"
                   href="https://www.linkedin.com/in/rayenfassatoui/"
                 >
                   LinkedIn{" "}
                 </Link>
+                and I&apos;ll respond as soon as possible 🙂
               </p>
             </div>
           </BlurFade>
