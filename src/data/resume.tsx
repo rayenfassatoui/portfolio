@@ -352,4 +352,52 @@ export const DATA = {
       ],
     }
   ],
+
+
+
+  clubs: [
+    {
+      name: "Lions Club",
+      description: "Our association is made up of 1.4 million members in 49,000 clubs who bring hands and hearts to the communities we serve in nearly every country on earth. Our Lions and Leos help hundreds of millions of people every year. Check out the ways we serve.",
+      logoUrl: "/LIONS_LOGO.png",
+      start: "2021",
+      end: "2022",
+      role: "Member",
+      events: [
+        {
+          title: "DIABETES AWARENESS",
+          description: "On the occasion of World Diabetes Day, Zone 2-3 of District Lions 414, in collaboration with Sirius Ariana and Kolna Nemchiw, is organizing an event on November 20 at the Menzah 1 track from 10 a.m. to 12 p.m.This event aims to raise awareness about the crucial role of regular walking in the treatment and prevention of diabetes.",
+          date: "nov 2021",
+          image: "/diabetes1.png",
+          url:"https://www.instagram.com/p/CWkxiFcg3Aq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        },
+        {
+          title: "ACTION SDf",
+          description: "Let's Think About the Homeless, Edition 2.0, was organized this Sunday, November 21, in collaboration with @leoclubtuniselmedina, benefiting 30 individuals located in Lac 1, in front of the International Organization for Migration.",
+          date: "nov 2021",
+          image: "/sdf.png",
+          url:"https://www.instagram.com/tv/CXuIvlSga1i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        },
+      ],
+    },
+    {
+      name: "zealers_pi",
+      description: "ZEALERS is a club created by the generation Z intended for those who want to prove themselves and make the change.",
+      logoUrl: "/zealers.png",
+      start: "2021",
+      end: "2022",
+      role: "Training Manager",
+      events: [
+        {
+          title: "HACKATHON CODE WARRIORS",
+          description: "hackathon aimed at developing a web and mobile application to evaluate Agil's services",
+          date: "nov 2021",
+          image: "/hak.jpg",
+          url: "https://www.instagram.com/p/CbTFKnzLaOB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        },
+      ],
+    },
+
+  ],
 } as const;
+

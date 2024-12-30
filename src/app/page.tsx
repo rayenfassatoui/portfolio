@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { Icons } from "@/components/icons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -191,6 +192,89 @@ export default function Page() {
               ))}
             </ul>
           </BlurFade>
+        </div>
+      </section>
+      <section id="clubs">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 17}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Clubs & Activities
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Community Involvement
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  I actively participate in various clubs and organizations, contributing to community service and professional development.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-8 max-w-[800px] mx-auto">
+            {DATA.clubs.map((club, id) => (
+              <BlurFade
+                key={club.name}
+                delay={BLUR_FADE_DELAY * 18 + id * 0.05}
+              >
+                <div className="space-y-4">
+                  <ResumeCard
+                    logoUrl={club.logoUrl}
+                    altText={club.name}
+                    title={club.name}
+                    subtitle={club.role}
+                    period={`${club.start} - ${club.end ?? "Present"}`}
+                    description={club.description}
+                  />
+                  
+                  {club.events && club.events.length > 0 && (
+                    <div className="pl-4 space-y-3">
+                      <h3 className="text-lg font-semibold">Events</h3>
+                      <div className="grid gap-3">
+                        {club.events.map((event, eventId) => (
+                          <BlurFade
+                            key={event.title}
+                            delay={BLUR_FADE_DELAY * 19 + eventId * 0.05}
+                          >
+                            <div className="rounded-lg border bg-card p-4">
+                              <div className="flex items-start gap-4">
+                                {event.image && (
+                                  <img
+                                    src={event.image}
+                                    alt={event.title}
+                                    className="h-20 w-20 rounded-md object-cover"
+                                  />
+                                )}
+                                <div className="flex flex-col flex-1 space-y-1">
+                                  <h4 className="font-medium">{event.title}</h4>
+                                  <p className="text-sm text-muted-foreground">
+                                    {event.date}
+                                  </p>
+                                  <p className="text-sm text-muted-foreground">
+                                    {event.description}
+                                  </p>
+                                  {event.url && (
+                                    <div className="flex flex-row flex-wrap items-start gap-1">
+                                      <Link href={event.url} target="_blank" rel="noopener noreferrer">
+                                        <Badge className="flex gap-2 px-2 py-1 text-[10px]">
+                                        
+                                          View Event
+                                        </Badge>
+                                      </Link>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </BlurFade>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </BlurFade>
+            ))}
+          </div>
         </div>
       </section>
       <section id="contact">
