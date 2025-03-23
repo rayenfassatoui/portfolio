@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "Rayen Fassatoui",
@@ -273,6 +273,36 @@ export const DATA = {
       image: "/management.png",
       video:
         "",
+    },
+    {
+      title: "WriteFlow",
+      href: "https://writeflow-snowy.vercel.app/",
+      dates: "",
+      active: true,
+      description:
+        "WriteFlow is a sophisticated SaaS platform that leverages artificial intelligence to streamline and enhance the content creation process for marketers, writers, and content creators.",
+      technologies: [
+       
+
+        "Next.js",
+        "PostgreSQL",
+        "OpenAI GPT",
+        "Tailwind CSS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://writeflow-snowy.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/rayenfassatoui/writeflow",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/writeflow.png",
+      video: "",
     },
   ],
   hackathons: [
