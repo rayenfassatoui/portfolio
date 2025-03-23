@@ -288,6 +288,12 @@ export const DATA = {
         "PostgreSQL",
         "OpenAI GPT",
         "Tailwind CSS",
+        "NextAuth.js",
+        "Shadcn UI",
+        "Framer Motion",
+        "Prisma",
+
+        
       ],
       links: [
         {
