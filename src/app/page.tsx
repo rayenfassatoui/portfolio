@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { Icons } from "@/components/icons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -103,11 +102,20 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
+          <div className="flex flex-col gap-2">
+            {Object.entries(DATA.skills).map(([category, skills], categoryIndex) => (
+              <div key={category} className="mb-2">
+                <BlurFade delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05}>
+                  <h3 className="text-md font-medium mb-1">{category}</h3>
+                  <div className="flex flex-wrap gap-1">
+                    {skills.map((skill, skillIndex) => (
+                      <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05 + skillIndex * 0.02}>
+                        <Badge key={skill}>{skill}</Badge>
+                      </BlurFade>
+                    ))}
+                  </div>
+                </BlurFade>
+              </div>
             ))}
           </div>
         </div>

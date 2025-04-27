@@ -20,12 +20,20 @@ export const metadata: Metadata = {
   },
   description: DATA.description,
   openGraph: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} - Web Developer Portfolio`,
     description: DATA.description,
     url: DATA.url,
     siteName: `${DATA.name}`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/metatag.png",
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name}'s Portfolio`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -39,13 +47,15 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} - Web Developer Portfolio`,
     card: "summary_large_image",
+    images: ["/metatag.png"],
   },
   verification: {
     google: "",
     yandex: "",
   },
+  keywords: ["Web Developer", "Solutions Developer", "React", "Node.js", "Portfolio", "Full Stack Developer"],
 };
 
 export default function RootLayout({
@@ -55,17 +65,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-     
-        <meta
-          property="og:title"
-          content="Rayen Fassatoui - Web Developer Portfolio"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rayen.vercel.app" />
-       
-        <meta property="og:image" content="/metatag.png" />
-      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
