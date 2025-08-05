@@ -89,6 +89,30 @@ export const DATA = {
 
   work: [
     {
+      company: "Aquil App",
+      href: "https://www.aquilapp.fr/",
+      badges: [],
+      location: "Nantes, France (Remote)",
+      title: "Full-stack Developer",
+      logoUrl: "/aquilapp.png",
+      start: "Jul 2025",
+      end: "Present",
+      description:
+        "Built a job-matching platform using Next.js, Laravel, and AI algorithms to solve inefficiencies in traditional hiring. Implemented dynamic UIs with shadcn/ui, integrated REST and GraphQL APIs, and optimized performance with SSR and code splitting. Boosted user engagement by 60% and reduced time-to-hire for companies by over 40%.",
+    },
+    {
+      company: "Storegen.ai",
+      href: "https://www.storegen.ai/en",
+      badges: [],
+      location: "Montréal, Canada (Remote)",
+      title: "Full-stack Developer",
+      logoUrl: "/Storegen.png",
+      start: "Jan 2025",
+      end: "Apr 2025",
+      description:
+        "Built modern landing pages with Next.js 15, React, TypeScript, Tailwind CSS, and shadcn/ui components to maximize visitor-to-customer conversion. Implemented backend data models and API endpoints using Prisma ORM on Neon serverless PostgreSQL, exposing Next.js Server Actions and securing routes with Auth.js v5. Integrated AI generation workflows via Gemini and Flux API within Server Actions, persisting AI-generated data through Prisma.",
+    },
+    {
       company: "FRTN Technologies Tunisie",
       href: "https://incubation.frtn.tech/",
       badges: [],
