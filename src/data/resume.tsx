@@ -106,7 +106,7 @@ export const DATA = {
       badges: [],
       location: "Montréal, Canada (Remote)",
       title: "Full-stack Developer",
-      logoUrl: "/Storegen.png",
+      logoUrl: "storegen.png",
       start: "Jan 2025",
       end: "Apr 2025",
       description:
