@@ -195,7 +195,7 @@ export const DATA = {
       degree: "IRM-Opt. Embedded and Mobile Systems Engineering.",
       logoUrl: "/polytech.jpg",
       start: "2024",
-      end: "2027",
+      end: "2026",
     },
   ],
   projects: [
