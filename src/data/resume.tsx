@@ -140,6 +140,12 @@ export const DATA = {
         icon: Download,
         navbar: true,
       },
+      downloadFR: {
+        name: "Télécharger le CV",
+        url: "/resume_fr.pdf",
+        icon: Download,
+        navbar: true,
+      },
     },
   },
 

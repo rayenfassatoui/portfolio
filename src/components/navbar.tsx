@@ -5,9 +5,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -44,7 +44,12 @@ export default function Navbar() {
         ))}
         <Separator orientation="vertical" className="h-full" />
         {Object.entries(DATA.contact.social)
-          .filter(([_, social]) => social.navbar)
+          .filter(([name, social]) => {
+            // Filter out the download button that doesn't match current language
+            if (name === "download" && language === "fr") return false;
+            if (name === "downloadFR" && language === "en") return false;
+            return social.navbar;
+          })
           .map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
@@ -60,7 +65,7 @@ export default function Navbar() {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p>{social.name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
