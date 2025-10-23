@@ -1,17 +1,23 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Languages } from "lucide-react";
 
 export default function Navbar() {
+  const { language, toggleLanguage } = useLanguage();
+
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -60,6 +66,29 @@ export default function Navbar() {
             </DockIcon>
           ))}
         <Separator orientation="vertical" className="h-full py-2" />
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                onClick={toggleLanguage}
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12 relative"
+                )}
+              >
+                <div className="flex flex-col items-center justify-center">
+                  <Languages className="size-4" />
+                  <span className="text-[9px] font-semibold mt-0.5">
+                    {language.toUpperCase()}
+                  </span>
+                </div>
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{language === "en" ? "Switch to French" : "Passer à l'anglais"}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
