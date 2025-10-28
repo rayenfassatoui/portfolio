@@ -525,6 +525,37 @@ export const DATA = {
       image: "/writeflow.png",
       video: "",
     },
+    {
+      title: "Neon Schema Pilot",
+      href: "https://neon-schema-pilot.vercel.app/",
+      dates: "",
+      active: true,
+      description:
+        "Neon Schema Pilot is a schema-first database studio tailored for Neon: connect a single URL and instantly explore your schema through a draggable visual canvas, rich table metadata, and live SQL previews. Built with Next.js (App Router), Bun, shadcn/ui, and Neon's serverless driver, it normalizes snapshots server-side, highlights foreign-key relationships, and keeps connection context synced as you switch between visual, table, and SQL views -- delivering a polished, theme-aware workspace that's ready to share with collaborators.",
+      technologies: [
+        "Next.js 16 (App Router)",
+        "Bun runtime & package manager",
+        "React (client components with Suspense)",
+        "TypeScript",
+        "Tailwind CSS + shadcn/ui component system",
+        "Neon serverless Postgres driver and API",
+        "Lucide icons",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://neon-schema-pilot.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/rayenfassatoui/NeonSchemaPilot",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/neon-schema-pilot.png",
+      video: "",
+    },
   ],
   projectsFr: [
     {
@@ -692,6 +723,37 @@ export const DATA = {
         },
       ],
       image: "/writeflow.png",
+      video: "",
+    },
+    {
+      title: "Neon Schema Pilot",
+      href: "https://neon-schema-pilot.vercel.app/",
+      dates: "",
+      active: true,
+      description:
+        "Neon Schema Pilot est un studio de base de données centré sur le schéma conçu pour Neon : connectez une seule URL et explorez instantanément votre schéma via un canevas visuel glissable, des métadonnées de table riches et des aperçus SQL en direct. Construit avec Next.js (App Router), Bun, shadcn/ui et le pilote serverless de Neon, il normalise les instantanés côté serveur, met en évidence les relations de clés étrangères et maintient le contexte de connexion synchronisé lorsque vous passez entre les vues visuelle, table et SQL -- offrant un espace de travail soigné, compatible avec les thèmes, prêt à être partagé avec des collaborateurs.",
+      technologies: [
+        "Next.js 16 (App Router)",
+        "Bun runtime & package manager",
+        "React (client components with Suspense)",
+        "TypeScript",
+        "Tailwind CSS + shadcn/ui component system",
+        "Neon serverless Postgres driver and API",
+        "Lucide icons",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://neon-schema-pilot.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/rayenfassatoui/NeonSchemaPilot",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/neon-schema-pilot.png",
       video: "",
     },
   ],
