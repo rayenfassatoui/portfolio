@@ -557,6 +557,42 @@ export const DATA = {
       image: "/neonschemapilot.png",
       video: "",
     },
+{
+  title: "OptimumCV",
+  href: "https://cv.rayenft.dev/",
+  dates: "",
+  active: true,
+  description: "OptimumCV is an AI-powered CV builder designed to simplify and optimize the creation of professional resumes. Connect your profile or import an existing CV, and instantly explore smart features: ATS optimization, automatic adaptation to job postings, cover letter generation, and internship application assistance with automatic extraction of company emails. Built with Next.js (App Router), TypeScript, Google Gemini AI, shadcn/ui, and React Hook Form, it provides real-time previews, supports dark/light mode, and generates professional Harvard-style PDFs—offering a modern, intuitive workspace ready to boost your job search.",
+  technologies: [
+    "Next.js 16",
+    "TypeScript",
+    "Google Gemini AI",
+    "React Hook Form",
+    "Zod validation",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Radix UI",
+    "PDF.js",
+    "jsPDF",
+    "Lucide icons"
+  ],
+  links: [
+    {
+      type: "Website",
+      href: "https://cv.rayenft.dev/",
+      icon: <Icons.globe className="size-3" />,
+    },
+    {
+      type: "Source",
+      href: "https://github.com/rayenfassatoui/optimumcv",
+      icon: <Icons.github className="size-3" />
+    }
+  ],
+  image: "/optimumcv.png",
+  video: ""
+}
+
+
   ],
   projectsFr: [
     {
@@ -758,6 +794,42 @@ export const DATA = {
       image: "/neonschemapilot.png",
       video: "",
     },
+
+
+    {
+  title: "OptimumCV",
+  href: "https://cv.rayenft.dev/",
+  dates: "",
+  active: true,
+  description: "OptimumCV est un générateur de CV alimenté par l'IA conçu pour simplifier et optimiser la création de CV professionnels. Connectez votre profil ou importez un CV existant, et explorez instantanément des fonctionnalités intelligentes : optimisation ATS, adaptation automatique aux offres d'emploi, génération de lettres de motivation, et assistant de candidature pour stages avec extraction automatique des emails d'entreprise. Construit avec Next.js (App Router), TypeScript, Google Gemini AI, shadcn/ui et React Hook Form, il offre un aperçu en temps réel, supporte le mode sombre/clair, et génère des PDF professionnels au format Harvard -- offrant un espace de travail moderne, intuitif et prêt à propulser votre recherche d'emploi.",
+  technologies: [
+    "Next.js 16",
+    "TypeScript",
+    "Google Gemini AI",
+    "React Hook Form",
+    "Zod validation",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Radix UI",
+    "PDF.js",
+    "jsPDF",
+    "Lucide icons"
+  ],
+  links: [
+    {
+      type: "Website",
+      href: "https://cv.rayenft.dev/",
+      icon: <Icons.globe className="size-3" />
+    },
+    {
+      type: "Source",
+      href: "https://github.com/rayenfassatoui/optimumcv",
+      icon: <Icons.github className="size-3" />
+    }
+  ],
+  image: "/optimumcv.png",
+  video: ""
+}
   ],
   hackathons: [
     {
