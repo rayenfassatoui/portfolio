@@ -1,18 +1,14 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import "@fontsource/inter";
+import "@fontsource/playfair-display";
 import "./globals.css";
-
-const fontSans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
@@ -69,15 +65,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
+          "min-h-screen bg-background font-sans antialiased max-w-full mx-auto",
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <LanguageProvider>
             <TooltipProvider delayDuration={0}>
-              {children}
-              <Navbar />
+              <SmoothScroll>
+                <div className="relative flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-1">{children}</main>
+                </div>
+              </SmoothScroll>
             </TooltipProvider>
           </LanguageProvider>
         </ThemeProvider>

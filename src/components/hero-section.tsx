@@ -1,60 +1,71 @@
 "use client";
 
-import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { DATA } from "@/data/resume";
-import Markdown from "react-markdown";
-
-const BLUR_FADE_DELAY = 0.04;
 
 export function HeroSection() {
   const { language } = useLanguage();
 
-  const description = language === "fr" && DATA.descriptionFr ? DATA.descriptionFr : DATA.description;
-  const summary = language === "fr" && DATA.summaryFr ? DATA.summaryFr : DATA.summary;
-  const greeting = language === "fr" 
-    ? `Salut, je suis ${DATA.name.split(" ")[0]} 👋` 
-    : `Hi, I'm ${DATA.name.split(" ")[0]} 👋`;
+  const greeting = language === "fr" ? "Bonjour, je suis" : "Hello, I am";
+  const role = language === "fr" ? "Développeur Web & Créatif" : "Web Developer & Creative";
+  const description = language === "fr" ? DATA.summaryFr : DATA.summary;
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: [0.16, 1, 0.3, 1], // Custom ease for "heavy" feel
+      }
+    },
+  };
 
   return (
-    <>
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={greeting}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
-          </div>
-        </div>
-      </section>
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">{language === "fr" ? "À propos" : "About"}</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {summary}
-          </Markdown>
-        </BlurFade>
-      </section>
-    </>
+    <section id="hero" className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="z-10 max-w-4xl"
+      >
+        <motion.p variants={item} className="text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground mb-4 font-sans">
+          {greeting}
+        </motion.p>
+
+        <motion.h1 variants={item} className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold tracking-tight mb-6 text-foreground">
+          {DATA.name.split(" ")[0]}
+          <span className="block text-4xl md:text-6xl lg:text-7xl text-muted-foreground italic mt-2">
+            {DATA.name.split(" ")[1]}
+          </span>
+        </motion.h1>
+
+        <motion.div variants={item} className="h-px w-24 bg-border mx-auto my-8" />
+
+        <motion.h2 variants={item} className="text-xl md:text-2xl font-sans font-light tracking-wide text-foreground/80 mb-8">
+          {role}
+        </motion.h2>
+
+        <motion.p variants={item} className="max-w-xl mx-auto text-muted-foreground text-sm md:text-base leading-relaxed font-sans">
+          {description}
+        </motion.p>
+      </motion.div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+    </section>
   );
 }

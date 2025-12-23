@@ -1,67 +1,55 @@
 "use client";
 
-import BlurFade from "@/components/magicui/blur-fade";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { DATA } from "@/data/resume";
 import Link from "next/link";
-
-const BLUR_FADE_DELAY = 0.04;
+import { ArrowUpRight } from "lucide-react";
 
 export function ContactSection() {
   const { language } = useLanguage();
 
-  const contactText = {
-    en: {
-      badge: "Contact",
-      title: "Get in Touch",
-      description: (
-        <>
-          Want to chat? Just send me a DM on{" "}
-          <Link
-            className="text-blue-500"
-            href="https://www.linkedin.com/in/rayenfassatoui/"
-          >
-            LinkedIn{" "}
-          </Link>
-          and I&apos;ll respond as soon as possible 🙂
-        </>
-      ),
-    },
-    fr: {
-      badge: "Contact",
-      title: "Entrer en Contact",
-      description: (
-        <>
-          Vous voulez discuter ? Envoyez-moi simplement un message sur{" "}
-          <Link
-            className="text-blue-500"
-            href="https://www.linkedin.com/in/rayenfassatoui/"
-          >
-            LinkedIn{" "}
-          </Link>
-          et je vous répondrai dès que possible 🙂
-        </>
-      ),
-    },
-  };
-
-  const content = language === "fr" ? contactText.fr : contactText.en;
+  const title = language === "fr" ? "Parlons-en" : "Let's Talk";
+  const subtitle = language === "fr" ? "Vous avez un projet en tête ?" : "Have a project in mind?";
+  const email = DATA.contact.email;
 
   return (
-    <section id="contact">
-      <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-        <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <div className="space-y-3">
-            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-              {content.badge}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              {content.title}
-            </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {content.description}
-            </p>
+    <section id="contact" className="py-32 w-full bg-foreground text-background">
+      <div className="container px-4 mx-auto flex flex-col items-center justify-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm md:text-base font-sans uppercase tracking-widest mb-4 opacity-70">
+            {subtitle}
+          </p>
+          <h2 className="text-6xl md:text-9xl font-serif font-bold mb-12 tracking-tight">
+            {title}
+          </h2>
+
+          <Link
+            href={`mailto:${email}`}
+            className="group flex items-center gap-2 text-2xl md:text-4xl font-sans hover:italic transition-all duration-300 border-b border-background/20 pb-2 hover:border-background"
+          >
+            {email}
+            <ArrowUpRight className="size-6 md:size-8 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+          </Link>
+
+          <div className="mt-16 flex gap-8">
+            {Object.entries(DATA.contact.social).map(([name, social]) => (
+              <Link
+                key={name}
+                href={social.url}
+                target="_blank"
+                className="text-sm md:text-base font-sans uppercase tracking-wider hover:underline underline-offset-4 opacity-70 hover:opacity-100 transition-opacity"
+              >
+                {name}
+              </Link>
+            ))}
           </div>
-        </BlurFade>
+        </motion.div>
       </div>
     </section>
   );

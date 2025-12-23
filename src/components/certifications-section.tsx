@@ -1,60 +1,54 @@
 "use client";
 
-import BlurFade from "@/components/magicui/blur-fade";
-import { HackathonCard } from "@/components/hackathon-card";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { DATA } from "@/data/resume";
-
-const BLUR_FADE_DELAY = 0.04;
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function CertificationsSection() {
   const { language } = useLanguage();
-
   const hackathonsData = language === "fr" && DATA.hackathonsFr ? DATA.hackathonsFr : DATA.hackathons;
-  
-  const title = language === "fr" ? "Développement Professionnel" : "Professional Development";
-  const subtitle = language === "fr" ? "Certifications" : "Certifications";
-  const description = language === "fr" 
-    ? `Je suis engagé dans l'apprentissage continu et la croissance. J'ai obtenu un total de ${DATA.hackathons.length} certifications, mettant en évidence mon dévouement et mes réalisations.`
-    : `I'm committed to continuous learning and growth. I have earned a total of ${DATA.hackathons.length} certifications, highlighting my dedication and achievements.`;
+  const title = language === "fr" ? "Certifications" : "Certifications";
 
   return (
-    <section id="hackathons">
-      <div className="space-y-12 w-full py-12">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                {subtitle}
+    <section id="certifications" className="py-24 w-full">
+      <div className="container px-4 mx-auto max-w-4xl">
+        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-16 text-center">
+          {title}
+        </h2>
+
+        <div className="grid gap-8">
+          {hackathonsData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group flex flex-col md:flex-row md:items-center justify-between border-b border-border pb-8"
+            >
+              <div className="space-y-2">
+                <h3 className="text-xl font-serif font-medium group-hover:italic transition-all">
+                  {project.title}
+                </h3>
+                <p className="text-sm font-sans text-muted-foreground">
+                  {project.location}
+                </p>
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                {title}
-              </h2>
-              <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {description}
-              </p>
-            </div>
-          </div>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 14}>
-          <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-            {hackathonsData.map((project, id) => (
-              <BlurFade
-                key={project.title + project.dates}
-                delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-              >
-                <HackathonCard
-                  title={project.title}
-                  description={project.description}
-                  location={project.location}
-                  dates={project.dates}
-                  image={project.image}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
-          </ul>
-        </BlurFade>
+              <div className="flex items-center gap-4 mt-4 md:mt-0">
+                <span className="text-sm font-sans text-muted-foreground/60">
+                  {project.dates}
+                </span>
+                {project.links && project.links.length > 0 && (project.links as any)[0] && (
+                  <Link href={(project.links as any)[0].href} target="_blank" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowUpRight className="size-5" />
+                  </Link>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
