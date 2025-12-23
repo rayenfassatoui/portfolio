@@ -15,7 +15,7 @@ export function SkillsSection() {
           {language === "fr" ? "Compétences" : "Skills"}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
           {Object.entries(skillsData).map(([category, skills], index) => (
             <motion.div
               key={category}

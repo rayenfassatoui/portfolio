@@ -65,7 +65,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-full mx-auto",
+          "min-h-screen bg-background font-sans antialiased max-w-full mx-auto overflow-x-hidden",
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">

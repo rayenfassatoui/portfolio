@@ -25,7 +25,7 @@ export function ContactSection() {
           <p className="text-sm md:text-base font-sans uppercase tracking-widest mb-4 opacity-70">
             {subtitle}
           </p>
-          <h2 className="text-6xl md:text-9xl font-serif font-bold mb-12 tracking-tight">
+          <h2 className="text-4xl md:text-9xl font-serif font-bold mb-12 tracking-tight">
             {title}
           </h2>
 

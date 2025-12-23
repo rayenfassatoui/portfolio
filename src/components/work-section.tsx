@@ -23,7 +23,7 @@ export function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 md:gap-12 border-l-2 border-border pl-8 md:pl-0 md:border-l-0"
+              className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-12 border-l-2 border-border pl-6 md:pl-0 md:border-l-0"
             >
               <div className="md:text-right">
                 <span className="text-sm font-sans text-muted-foreground uppercase tracking-wider">
