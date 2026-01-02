@@ -303,7 +303,7 @@ export const DATA = {
       location: "Sur site",
       title: "Développeur Fullstack",
       logoUrl: "/cin.jpg",
-      start: "Aoû 2022",
+      start: "Août 2022",
       end: "Jan 2023",
       description:
         "Développement d'une plateforme d'investissement sécurisée, création du frontend avec React et Chakra UI et du backend avec Node.js, Express.js et PostgreSQL, atteignant une disponibilité de 99,9% et maintenant zéro faille de sécurité tout en traitant efficacement les demandes des utilisateurs à travers la Tunisie. De plus, optimisation des requêtes de base de données PostgreSQL et collaboration au développement de nouvelles fonctionnalités, améliorant la réactivité de l'application de 20% et augmentant les scores de confiance des utilisateurs de 25% par rapport à la conception précédente du site web.",
@@ -316,7 +316,7 @@ export const DATA = {
       title: "Développeur Junior",
       logoUrl: "/smartkokusai.jpg",
       start: "Juil 2022",
-      end: "Aoû 2022",
+      end: "Août 2022",
       description:
         "Développement d'interfaces frontend dynamiques pour des sites web clients utilisant React.js, incorporant des animations engageantes et des fonctionnalités de filtrage avancées, augmentant la durée moyenne de session utilisateur de 30%. De plus, implémentation de solutions backend et d'APIs RESTful avec Node.js, Express.js et SQL, conduisant à une amélioration de 40% des vitesses de récupération des données.",
     },
