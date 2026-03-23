@@ -16,7 +16,7 @@ const fontMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name} | Fullstack AI Engineer Portfolio`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/rayen.png",
         width: 1200,
         height: 630,
-        alt: DATA.name,
+        alt: `Hire ${DATA.name} - Fullstack AI Engineer. Click to view portfolio and projects.`,
       },
     ],
   },
@@ -48,9 +48,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} | Fullstack AI Engineer`,
     card: "summary_large_image",
     images: ["/rayen.png"],
+    description: DATA.description,
   },
   icons: {
     icon: "/favicon.png",
