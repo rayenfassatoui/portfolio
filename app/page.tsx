@@ -106,12 +106,15 @@ export default function Home() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-secondary/30 border border-border/40 backdrop-blur-md shadow-sm"
+                        className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-secondary/30 border border-border/40 backdrop-blur-md shadow-sm"
                     >
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                        </span>
+                        <div className="relative flex items-center -ml-1">
+                            
+                            <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                            </span>
+                        </div>
                         <span className="text-sm md:text-base font-medium tracking-wide flex items-center gap-2">
                             Hi, I'm Rayen — Tunisian Web Developer 
                             <img src="https://flagcdn.com/w40/tn.png" alt="TN" className="w-[18px] h-[18px] rounded-full object-cover shadow-sm opacity-90 aspect-square" />
@@ -124,7 +127,7 @@ export default function Home() {
                             animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                             style={{ backgroundSize: "200% auto" }}
-                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 font-light"
+                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 font-light pb-4 md:pb-6"
                         >
                             intelligence
                         </motion.span> of the web.
