@@ -5,9 +5,9 @@ export const DATA = {
   location: "Montfleury, Tunisia",
   locationLink: "https://www.google.com/maps/place/Montfleury,+Tunisia",
   description:
-    "Results-oriented Fullstack AI Engineer with experience building scalable web applications and integrating advanced artificial intelligence models.",
+    "Results-oriented Fullstack AI Engineer with 2+ years experience building scalable web applications and integrating advanced artificial intelligence models.",
   summary:
-    "Passionate Fullstack AI Engineer with experience architecting and developing intelligent web applications. Specialized in modern technologies like Next.js, React, Node.js, and PostgreSQL, while deeply integrating AI capabilities such as LLMs, RAG pipelines, and vector databases (pgvector). Skilled in bridging the gap between robust backend systems, dynamic user interfaces, and advanced AI models to deliver practical, scalable, and user-focused digital solutions.",
+    "Passionate Fullstack AI Engineer with 2+ years experience architecting and developing intelligent web applications. Specialized in modern technologies like Next.js, React, Node.js, and PostgreSQL, while deeply integrating AI capabilities such as LLMs, RAG pipelines, and vector databases (pgvector). Skilled in bridging the gap between robust backend systems, dynamic user interfaces, and advanced AI models to deliver practical, scalable, and user-focused digital solutions.",
   avatarUrl: "/me.png",
   skills: [
     // AI & Machine Learning
@@ -55,7 +55,7 @@ export const DATA = {
       href: "",
       badges: ["Hybrid"],
       location: "Tunis, Tunisia",
-      title: "Full Stack AI Engineer",
+      title: "Full-Stack Engineer",
       logoUrl: "",
       start: "Feb 2026",
       end: "Present",
@@ -67,7 +67,7 @@ export const DATA = {
       href: "",
       badges: ["Contract"],
       location: "Nantes, France (Remote)",
-      title: "Full-stack Developer",
+      title: "Full-Stack Developer",
       logoUrl: "",
       start: "Jul 2025",
       end: "Oct 2025",
