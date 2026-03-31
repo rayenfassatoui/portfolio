@@ -2,6 +2,7 @@ import { Geist_Mono, Public_Sans } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import SmoothScroll from "@/components/SmoothScroll";
 import { cn } from "@/lib/utils";
 import { DATA } from "@/data/resume";
 import type { Metadata } from "next";
@@ -72,7 +73,11 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", publicSans.variable)}
     >
       <body suppressHydrationWarning>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   )
