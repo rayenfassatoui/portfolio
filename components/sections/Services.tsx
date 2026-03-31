@@ -102,8 +102,12 @@ export function Services() {
                                 </div>
                                 
                                 <div className="mt-auto mb-auto md:mb-12">
-                                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-6 text-foreground shadow-sm">{service.title}</h2>
-                                    <p className="text-foreground/80 md:text-xl font-light leading-relaxed max-w-lg mb-8 drop-shadow-sm">{service.description}</p>
+                                    <h2 className="text-[clamp(2.5rem,4vw,4.5rem)] font-black uppercase tracking-tighter leading-[0.9] mb-4 text-foreground shadow-sm line-clamp-2 min-h-[2em] flex items-end">
+                                        {service.title}
+                                    </h2>
+                                    <p className="text-foreground/80 text-[clamp(1rem,1vw,1.25rem)] font-light leading-relaxed w-full md:max-w-lg mb-6 md:mb-8 drop-shadow-sm line-clamp-3">
+                                        {service.description}
+                                    </p>
                                     
                                     <div className="flex flex-wrap gap-2">
                                         {service.tags.map(tag => (
