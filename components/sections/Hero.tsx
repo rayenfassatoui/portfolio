@@ -38,7 +38,7 @@ export function Hero() {
         <motion.section 
             initial="hidden" 
             animate="visible" 
-            className="min-h-[75vh] md:min-h-[85vh] flex flex-col justify-center relative md:-mt-10"
+            className="min-h-[60vh] md:min-h-[85vh] flex flex-col justify-start mt-2 md:-mt-10 md:justify-center relative"
         >
             {/* Ambient Background Glows */}
             <motion.div 
@@ -62,31 +62,33 @@ export function Hero() {
                 className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10 mix-blend-screen dark:mix-blend-color-dodge" 
             />
             
-            <div className="space-y-2 md:space-y-10 max-w-5xl relative z-10 group cursor-default">
+            <div className="flex flex-col relative z-10 group cursor-default w-full">
                 
                 {/* Introduction Badge */}
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="inline-flex items-center gap-1.5 md:gap-3 px-2 py-1 md:px-5 md:py-2.5 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-xl shadow-sm hover:bg-secondary/80 transition-colors"
-                >
-                    <div className="relative flex items-center -ml-1">
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-1.5 w-1.5 md:h-2.5 md:w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2.5 md:w-2.5 bg-emerald-500"></span>
+                <div className="w-full flex justify-center md:justify-start">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="inline-flex items-center gap-1.5 md:gap-3 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-xl shadow-sm hover:bg-secondary/80 transition-colors"
+                    >
+                        <div className="relative flex items-center -ml-1">
+                            <span className="absolute -bottom-0.5 -right-0.5 flex h-1.5 w-1.5 md:h-2.5 md:w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2.5 md:w-2.5 bg-emerald-500"></span>
+                            </span>
+                        </div>
+                        <span className="text-[10px] md:text-base font-semibold tracking-wide flex items-center gap-1 md:gap-2 text-foreground/90 whitespace-nowrap">
+                            Hi, I'm Rayen — Tunisian Web Developer 
+                            <img src="https://flagcdn.com/w40/tn.png" alt="TN" className="w-[12px] h-[12px] md:w-[18px] md:h-[18px] rounded-full object-cover shadow-sm opacity-90 aspect-square" />
                         </span>
-                    </div>
-                    <span className="text-[10px] md:text-base font-semibold tracking-wide flex items-center gap-1 md:gap-2 text-foreground/90 whitespace-nowrap">
-                        Hi, I'm Rayen — Tunisian Web Developer 
-                        <img src="https://flagcdn.com/w40/tn.png" alt="TN" className="w-[12px] h-[12px] md:w-[18px] md:h-[18px] rounded-full object-cover shadow-sm opacity-90 aspect-square" />
-                    </span>
-                </motion.div>
+                    </motion.div>
+                </div>
 
                 {/* Staggered Word Reveal Headline */}
                 <motion.h1 
                     variants={textRevealStagger}
-                    className="text-[3.25rem] md:text-7xl lg:text-[8.5rem] font-bold tracking-tighter leading-[0.85] md:leading-[0.9] -ml-1 md:-ml-2 flex flex-wrap gap-x-2 md:gap-x-6 gap-y-0 md:gap-y-6"
+                    className="mt-10 md:mt-10 text-[3.25rem] md:text-7xl lg:text-[8.5rem] font-bold tracking-tight md:tracking-tighter leading-[0.9] -ml-1 md:-ml-2 flex flex-wrap gap-x-4 md:gap-x-6 gap-y-1 md:gap-y-6"
                 >
                     {headline.map((word, i) => {
                         const isGradient = word === "intelligence";

@@ -23,15 +23,10 @@ export default function Home() {
 
         <Header />
 
-        <main className="pt-48 pb-24 max-w-[1600px] mx-auto w-full overflow-x-clip">
+        <main className="pt-28 md:pt-48 pb-24 max-w-[1600px] mx-auto w-full overflow-x-clip">
             <div className="px-6 md:px-12">
                 <Hero />
-               
-            </div>
-               <Work />
-          
-            
-            <div className="px-6 md:px-12">
+                <Work />
                 <Experience />
             <Education />
             <Marquee />
