@@ -28,7 +28,7 @@ export default function Home() {
         <main className="pt-48 pb-24 max-w-[1600px] mx-auto w-full overflow-x-clip">
             <div className="px-6 md:px-12">
                 <Hero />
-                <Marquee />
+               
             </div>
             
             <Services />
@@ -36,6 +36,7 @@ export default function Home() {
             <div className="px-6 md:px-12">
                 <Experience />
             <Education />
+            <Marquee />
             <Certifications />
             <Skills />
             <Expertise />
