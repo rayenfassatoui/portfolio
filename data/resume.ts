@@ -191,10 +191,6 @@ export const DATA = {
     {
       title: "IT Specialist - HTML and CSS",
       issuer: "Certiport"
-    },
-    {
-      title: "Fullstack Development Certificate",
-      issuer: "Professional Certification"
     }
   ],
 
