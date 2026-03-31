@@ -50,21 +50,21 @@ export function Skills() {
                 {/* BOX 2: Experience (Col-span 1, Row-span 1) */}
                 <motion.div 
                     whileHover={{ scale: 0.98 }}
-                    className="md:col-span-1 border border-border/5 rounded-[2rem] bg-foreground text-background p-8 relative overflow-hidden flex flex-col items-center justify-center text-center group shadow-xl"
+                    className="md:col-span-1 border border-border/5 rounded-[2rem] bg-secondary text-foreground p-8 relative overflow-hidden flex flex-col items-center justify-center text-center group shadow-xl"
                 >
                     <div className="absolute inset-0 z-0">
                         <img 
-                            src="https://images.unsplash.com/photo-1633516003923-cfd07fd36bc5?q=80&w=2670&auto=format&fit=crop" 
+                            src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2832&auto=format&fit=crop" 
                             alt="Abstract Tech" 
                             className="w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-1000" 
                         />
                     </div>
                     <div className="absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
                     
-                    <h3 className="text-[7rem] md:text-[8rem] font-black leading-none tracking-tighter group-hover:scale-110 transition-transform duration-700 ease-out z-10 relative drop-shadow-2xl text-background">
+                    <h3 className="text-[7rem] md:text-[8rem] font-black leading-none tracking-tighter group-hover:scale-110 transition-transform duration-700 ease-out z-10 relative drop-shadow-2xl text-foreground">
                         2<span className="text-primary">+</span>
                     </h3>
-                    <p className="uppercase tracking-widest text-sm font-bold opacity-80 mt-2 z-10 relative text-background">Years Exp.</p>
+                    <p className="uppercase tracking-widest text-sm font-bold opacity-80 mt-2 z-10 relative text-foreground">Years Exp.</p>
                 </motion.div>
 
                 {/* BOX 3: Frontend / Design (Col-span 1, Row-span 1) */}
