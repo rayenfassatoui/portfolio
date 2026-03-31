@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
+import { Services } from "@/components/sections/Services";
 import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Certifications } from "@/components/sections/Certifications";
@@ -24,15 +25,22 @@ export default function Home() {
 
         <Header />
 
-        <main className="pt-48 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto w-full overflow-hidden">
-            <Hero />
-            <Marquee />
-            <Experience />
+        <main className="pt-48 pb-24 max-w-[1600px] mx-auto w-full overflow-x-clip">
+            <div className="px-6 md:px-12">
+                <Hero />
+                <Marquee />
+            </div>
+            
+            <Services />
+            
+            <div className="px-6 md:px-12">
+                <Experience />
             <Education />
             <Certifications />
             <Skills />
             <Expertise />
             <Work />
+            </div>
         </main>
 
         <Footer />
