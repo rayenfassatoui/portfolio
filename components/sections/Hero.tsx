@@ -15,20 +15,20 @@ export function Hero() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2, // Wait for the badge to appear
+                staggerChildren: 0.1, // Faster stagger for a tighter fluid motion
+                delayChildren: 0.2, 
             }
         }
     };
 
-    // The individual word fly-up variant
+    // The fluid, Apple-style word fly-up variant with blur
     const wordVariant: any = {
-        hidden: { y: "150%", opacity: 0, rotateZ: 5 },
+        hidden: { y: "100%", opacity: 0, filter: "blur(12px)" },
         visible: { 
             y: 0, 
             opacity: 1, 
-            rotateZ: 0,
-            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+            filter: "blur(0px)",
+            transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } 
         }
     };
 
