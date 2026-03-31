@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 import { DATA } from "@/data/resume";
 
 const containerVariants = {
@@ -8,7 +10,7 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2,
+            staggerChildren: 0.1,
         },
     },
 };
@@ -19,12 +21,14 @@ const itemVariants = {
 };
 
 export function Experience() {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // First item open by default
+
     return (
         <motion.section 
             id="experience"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
             className="py-16 md:py-32 scroll-mt-32 relative"
         >
@@ -46,29 +50,72 @@ export function Experience() {
                     <h2 className="text-xl md:text-2xl font-mono uppercase tracking-widest text-muted-foreground mb-4">Experience</h2>
                     <h3 className="text-4xl md:text-5xl font-bold tracking-tight">My career journey.</h3>
                 </motion.div>
-                <div className="flex flex-col gap-12">
-                    {DATA.work.map((role, i) => (
-                        <motion.div key={i} variants={itemVariants} className="group flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-                            <div className="md:w-3/4">
-                                <h4 className="text-xl md:text-2xl font-medium tracking-tight group-hover:text-primary transition-colors">{role.title}</h4>
-                                <div className="flex items-center gap-3 mt-1 text-muted-foreground font-light">
-                                    <span>{role.company}</span>
-                                    {role.badges && role.badges.length > 0 && (
-                                        <span className="flex items-center gap-2">
-                                            <span className="w-1 h-1 rounded-full bg-border"></span>
-                                            {role.badges.join(", ")}
-                                        </span>
-                                    )}
+                
+                <div className="flex flex-col w-full">
+                    {DATA.work.map((role, i) => {
+                        const isOpen = expandedIndex === i;
+
+                        return (
+                            <motion.div 
+                                key={i} 
+                                variants={itemVariants} 
+                                className="group flex flex-col justify-between border-b border-border/10 cursor-pointer overflow-hidden transition-colors hover:bg-foreground/[0.02] -mx-4 px-4 py-4 md:py-6 rounded-2xl"
+                                onClick={() => setExpandedIndex(isOpen ? null : i)}
+                            >
+                                {/* Header Area */}
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 w-full">
+                                    <div className="flex items-center gap-4 md:gap-6">
+                                        <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 ease-out ${isOpen ? 'bg-foreground text-background scale-100' : 'bg-secondary text-foreground group-hover:scale-110'}`}>
+                                            <div className="relative w-5 h-5 flex items-center justify-center">
+                                                <motion.span 
+                                                    className="absolute w-4 h-[2px] bg-current rounded-full"
+                                                    animate={{ rotate: isOpen ? 180 : 0 }}
+                                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                                />
+                                                <motion.span 
+                                                    className="absolute w-4 h-[2px] bg-current rounded-full"
+                                                    animate={{ rotate: isOpen ? 180 : 90, opacity: isOpen ? 0 : 1, scale: isOpen ? 0 : 1 }}
+                                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors">{role.title}</h4>
+                                            <div className="flex items-center gap-3 mt-1 text-muted-foreground font-medium">
+                                                <span>{role.company}</span>
+                                                {role.badges && role.badges.length > 0 && (
+                                                    <span className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50 font-mono">
+                                                        <span className="w-1 h-1 rounded-full bg-border"></span>
+                                                        {role.badges.join(", ")}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="font-mono text-sm md:text-base tracking-widest text-muted-foreground/60 uppercase whitespace-nowrap pl-14 md:pl-0 mt-2 md:mt-0 opacity-80">
+                                        {role.start} — {role.end}
+                                    </div>
                                 </div>
-                                <p className="mt-4 text-base md:text-lg leading-relaxed font-light text-muted-foreground">
-                                    {role.description}
-                                </p>
-                            </div>
-                            <div className="font-mono text-sm tracking-widest text-muted-foreground/60 uppercase whitespace-nowrap">
-                                {role.start} — {role.end}
-                            </div>
-                        </motion.div>
-                    ))}
+
+                                {/* Accordion Content Area */}
+                                <AnimatePresence initial={false}>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} 
+                                            className="overflow-hidden w-full pl-14 md:pl-[4.5rem]"
+                                        >
+                                            <p className="mt-6 text-base md:text-lg leading-relaxed font-light text-muted-foreground max-w-3xl pb-2">
+                                                {role.description}
+                                            </p>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </motion.section>
