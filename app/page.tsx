@@ -9,7 +9,6 @@ import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Certifications } from "@/components/sections/Certifications";
 import { Skills } from "@/components/sections/Skills";
-import { Expertise } from "@/components/sections/Expertise";
 import { Work } from "@/components/sections/Work";
 import { Footer } from "@/components/Footer";
 
@@ -39,7 +38,6 @@ export default function Home() {
             <Marquee />
             <Certifications />
             <Skills />
-            <Expertise />
             <Work />
             </div>
         </main>
