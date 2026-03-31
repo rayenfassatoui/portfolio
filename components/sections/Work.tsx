@@ -47,10 +47,10 @@ export function Work() {
                     <motion.div 
                         variants={itemVariants} 
                         key={i} 
-                        className="group relative aspect-[4/3] md:aspect-[16/10] rounded-[2rem] overflow-hidden bg-secondary shadow-lg border border-border/5"
+                        className="group relative flex flex-col md:block md:aspect-[16/10] rounded-[2rem] overflow-hidden bg-secondary shadow-lg border border-border/5"
                     >
-                        {/* Background Image layer */}
-                        <div className="absolute inset-0">
+                        {/* Background Image layer: fixed height on mobile, full absolute on desktop */}
+                        <div className="relative h-[250px] shrink-0 md:h-auto md:absolute md:inset-0 overflow-hidden">
                             {item.image ? (
                                 <img 
                                     src={item.image} 
@@ -64,12 +64,12 @@ export function Work() {
                             )}
                         </div>
 
-                        {/* Interactive Overlay Layer (Appears on Hover) */}
-                        <div className="absolute inset-0 bg-background/90 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-between p-6 md:p-10 z-10">
+                        {/* Interactive Overlay Layer: Always visible below image on Mobile, appears on Hover over image on Desktop */}
+                        <div className="relative flex-1 bg-secondary/30 md:bg-background/90 md:backdrop-blur-xl md:absolute md:inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-between p-6 md:p-10 z-10">
                             
                             {/* Header: Title & Direct Link */}
-                            <div className="flex justify-between items-start translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out delay-75">
-                                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-foreground pr-4 leading-tight">
+                            <div className="flex flex-row gap-4 justify-between items-start md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-700 ease-out delay-75">
+                                <h3 className="text-2xl md:text-4xl font-black tracking-tighter text-foreground pr-4 leading-tight shrink">
                                     {item.title}
                                 </h3>
                                 <Link 
@@ -82,8 +82,8 @@ export function Work() {
                             </div>
 
                             {/* Body: Description & Tags */}
-                            <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out delay-100">
-                                <p className="text-foreground/80 md:text-lg font-light leading-relaxed mb-6 line-clamp-3 md:line-clamp-4">
+                            <div className="md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-700 ease-out delay-100 flex-1 flex flex-col justify-between mt-6 md:mt-0">
+                                <p className="text-foreground/80 text-sm md:text-lg font-light leading-relaxed mb-6 line-clamp-3 md:line-clamp-4">
                                     {item.description}
                                 </p>
                                 
