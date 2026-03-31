@@ -26,9 +26,22 @@ export function Experience() {
             whileInView="visible"
             viewport={{ once: false, margin: "-100px" }}
             variants={containerVariants}
-            className="py-16 md:py-32 scroll-mt-32"
+            className="py-16 md:py-32 scroll-mt-32 relative"
         >
-            <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start">
+            {/* Outline Background Typography */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 flex items-center justify-center opacity-[0.06] dark:opacity-[0.03]">
+                <motion.h2 
+                    initial={{ x: "-10%" }}
+                    whileInView={{ x: "0%" }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                    className="text-[12rem] md:text-[22rem] font-black uppercase tracking-tighter whitespace-nowrap text-transparent"
+                    style={{ WebkitTextStroke: "3px hsl(var(--foreground))" }}
+                >
+                    EXPERIENCE
+                </motion.h2>
+            </div>
+
+            <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start relative z-10">
                 <motion.div variants={itemVariants}>
                     <h2 className="text-xl md:text-2xl font-mono uppercase tracking-widest text-muted-foreground mb-4">Experience</h2>
                     <h3 className="text-4xl md:text-5xl font-bold tracking-tight">My career journey.</h3>

@@ -1,19 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Globe, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
 import Link from "next/link";
 import { DATA } from "@/data/resume";
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-        },
-    },
-};
+import { stagger } from "@/lib/animations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -25,71 +16,104 @@ export function Work() {
         <motion.section 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            variants={containerVariants}
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
             id="work" 
-            className="py-16 md:py-32 space-y-16 md:space-y-24"
+            className="py-16 md:py-32 relative"
         >
-            <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/10">
+            {/* Outline Background Typography */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full overflow-hidden pointer-events-none select-none z-0 flex items-center justify-center opacity-[0.05] dark:opacity-[0.03]">
+                <motion.h2 
+                    initial={{ x: "10%" }}
+                    whileInView={{ x: "0%" }}
+                    transition={{ duration: 3, ease: "easeOut" }}
+                    className="text-[14rem] md:text-[26rem] font-black uppercase tracking-tighter whitespace-nowrap text-transparent"
+                    style={{ WebkitTextStroke: "3px hsl(var(--foreground))" }}
+                >
+                    WORKS
+                </motion.h2>
+            </div>
+
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/10 mb-12 flex-wrap relative z-10">
                 <div>
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Selected Work</h2>
-                    <p className="text-muted-foreground text-xl font-light">A showcase of minimal aesthetics and complex logic.</p>
+                    <p className="text-muted-foreground text-xl font-light">A showcase of minimal aesthetics and complex AI logic.</p>
                 </div>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+            {/* Pure Visual Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 relative z-10">
                 {DATA.projects.map((item, i) => (
-                    <motion.div variants={itemVariants} key={i} className={`group ${i % 2 === 1 ? 'md:mt-32' : ''}`}>
-                        <Link href={item.href || '#'} target={item.href ? "_blank" : undefined} className="relative aspect-[1898/927] rounded-[2rem] overflow-hidden bg-secondary mb-8 block shadow-sm border border-border/5">
-                            <div className={`w-full h-full ${!item.image ? `bg-gradient-to-br ${item.color}` : 'bg-secondary/40'} group-hover:scale-[1.03] transition-transform duration-1000 relative flex flex-col overflow-hidden`}>
-                                {item.image ? (
-                                    <>
-                                        <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-                                        <div className="w-full h-full flex flex-col justify-center items-center">
-                                            <div className="w-full relative rounded-xl border-none shadow-2xl overflow-hidden flex flex-col group-hover:scale-[1.05] transition-transform duration-700 group-hover:shadow-primary/20">
-                                                <div className="w-full relative">
-                                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 transition-opacity" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className="flex-1 flex flex-col items-center justify-center relative">
-                                        <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-                                        <h4 className="text-white/80 font-mono tracking-widest text-2xl rotate-[-20deg] scale-150 opacity-10 font-bold">{item.title}</h4>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="absolute inset-0 bg-background/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <div className="bg-background text-foreground px-6 py-3 rounded-full font-medium tracking-wide shadow-2xl flex items-center gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                                    Visit Website <ArrowUpRight className="w-4 h-4" />
+                    <motion.div 
+                        variants={itemVariants} 
+                        key={i} 
+                        className="group relative aspect-[4/3] md:aspect-[16/10] rounded-[2rem] overflow-hidden bg-secondary shadow-lg border border-border/5"
+                    >
+                        {/* Background Image layer */}
+                        <div className="absolute inset-0">
+                            {item.image ? (
+                                <img 
+                                    src={item.image} 
+                                    alt={item.title} 
+                                    className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110" 
+                                />
+                            ) : (
+                                <div className={`w-full h-full bg-gradient-to-br ${item.color} flex items-center justify-center transition-transform duration-1000 group-hover:scale-110`}>
+                                    <h4 className="text-white/80 font-mono tracking-widest text-2xl rotate-[-20deg] scale-150 opacity-10 font-bold">{item.title}</h4>
                                 </div>
-                            </div>
-                        </Link>
+                            )}
+                        </div>
 
-                        <div className="flex items-start justify-between px-2 gap-4">
-                            <div className="flex-1">
-                                <h3 className="text-3xl font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-muted-foreground text-base font-light leading-relaxed mb-4">{item.description}</p>
-                                <div className="flex flex-wrap gap-2">
+                        {/* Interactive Overlay Layer (Appears on Hover) */}
+                        <div className="absolute inset-0 bg-background/90 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-between p-6 md:p-10 z-10">
+                            
+                            {/* Header: Title & Direct Link */}
+                            <div className="flex justify-between items-start translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out delay-75">
+                                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-foreground pr-4 leading-tight">
+                                    {item.title}
+                                </h3>
+                                <Link 
+                                    href={item.href || '#'} 
+                                    target="_blank" 
+                                    className="w-12 h-12 shrink-0 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-xl"
+                                >
+                                    <ArrowUpRight className="w-5 h-5" />
+                                </Link>
+                            </div>
+
+                            {/* Body: Description & Tags */}
+                            <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out delay-100">
+                                <p className="text-foreground/80 md:text-lg font-light leading-relaxed mb-6 line-clamp-3 md:line-clamp-4">
+                                    {item.description}
+                                </p>
+                                
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {item.technologies.slice(0, 5).map(tech => (
-                                        <span key={tech} className="px-3 py-1 text-xs font-mono rounded border border-border/30 bg-secondary/20 text-muted-foreground">
+                                        <span key={tech} className="px-3 py-1 text-xs font-mono rounded bg-foreground/10 text-foreground/90 border border-foreground/5">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
+
+                                {/* Footer: Source Links */}
+                                <div className="flex items-center gap-3">
+                                    {item.links?.map((link, idx) => {
+                                        const Icon = link.icon === "github" ? Github : Globe;
+                                        return (
+                                            <Link 
+                                                key={idx} 
+                                                href={link.href} 
+                                                target="_blank" 
+                                                className="p-3 rounded-full bg-foreground/5 hover:bg-foreground hover:text-background transition-all text-foreground border border-foreground/10 hover:border-transparent" 
+                                                title={link.type}
+                                            >
+                                                <Icon className="w-4 h-4" />
+                                            </Link>
+                                        )
+                                    })}
+                                </div>
                             </div>
                             
-                            <div className="flex items-center gap-2">
-                                {item.links?.map((link, idx) => {
-                                    const Icon = link.icon === "github" ? Github : link.icon === "globe" ? Globe : ArrowRight;
-                                    return (
-                                        <Link key={idx} href={link.href} target="_blank" className="p-3 bg-secondary/50 hover:bg-foreground hover:text-background text-foreground rounded-full transition-all" title={link.type}>
-                                            <Icon className="w-5 h-5" />
-                                        </Link>
-                                    )
-                                })}
-                            </div>
                         </div>
                     </motion.div>
                 ))}

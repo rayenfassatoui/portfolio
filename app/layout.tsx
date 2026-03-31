@@ -3,6 +3,7 @@ import { Geist_Mono, Public_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import SmoothScroll from "@/components/SmoothScroll";
+import { NoiseOverlay } from "@/components/NoiseOverlay";
 import { cn } from "@/lib/utils";
 import { DATA } from "@/data/resume";
 import type { Metadata } from "next";
@@ -74,6 +75,7 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning>
         <ThemeProvider>
+          <NoiseOverlay />
           <SmoothScroll>
             {children}
           </SmoothScroll>
