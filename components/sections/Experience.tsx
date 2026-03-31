@@ -107,9 +107,14 @@ export function Experience() {
                                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} 
                                             className="overflow-hidden w-full pl-14 md:pl-[4.5rem]"
                                         >
-                                            <p className="mt-6 text-base md:text-lg leading-relaxed font-light text-muted-foreground max-w-3xl pb-2">
-                                                {role.description}
-                                            </p>
+                                            <ul className="mt-6 flex flex-col gap-3 text-base md:text-lg leading-relaxed font-light text-muted-foreground max-w-3xl pb-4 list-none">
+                                                {role.description.split('. ').filter(Boolean).map((sentence, idx) => (
+                                                    <li key={idx} className="relative pl-6">
+                                                        <span className="absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+                                                        {sentence}{sentence.trim().endsWith('.') ? '' : '.'}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
