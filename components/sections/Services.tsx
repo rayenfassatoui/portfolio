@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 // Enhanced Services Data directly integrated for much stronger copywriting
@@ -42,9 +42,11 @@ export function Services() {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]); 
+    const rawX = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]); 
+    const x = useSpring(rawX, { stiffness: 100, damping: 25, mass: 0.5, restDelta: 0.001 });
     
-    const textScale = useTransform(scrollYProgress, [0, 0.2], [1, 20]);
+    const rawTextScale = useTransform(scrollYProgress, [0, 0.2], [1, 25]);
+    const textScale = useSpring(rawTextScale, { stiffness: 50, damping: 20, mass: 1 });
     const textOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
     return (
