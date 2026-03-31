@@ -22,7 +22,7 @@ export function Hero() {
     };
 
     // The individual word fly-up variant
-    const wordVariant = {
+    const wordVariant: any = {
         hidden: { y: "150%", opacity: 0, rotateZ: 5 },
         visible: { 
             y: 0, 
@@ -91,8 +91,8 @@ export function Hero() {
                     {headline.map((word, i) => {
                         const isGradient = word === "intelligence";
                         return (
-                            // Increased padding-bottom to prevent descenders (g, p, y) from getting cut off by overflow-hidden
-                            <span key={i} className="overflow-hidden inline-flex pb-8 -mb-8 pt-2 -mt-2">
+                            // Increased padding-bottom and padding-right to prevent cutoff on descenders (g) and slants (e)
+                            <span key={i} className="overflow-hidden inline-flex pb-8 -mb-8 pt-2 -mt-2 pr-2 -mr-2">
                                 <motion.span 
                                     variants={wordVariant}
                                     className="text-foreground"
